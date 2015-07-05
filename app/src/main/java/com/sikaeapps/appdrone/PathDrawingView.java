@@ -63,6 +63,8 @@ public class PathDrawingView extends View {
 		
 		canvasLength = 1600;
 		canvasWidth = 2560;
+		//canvasLength = 1080;
+		//canvasWidth = 1700;
 		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 		if(lengthArea > widthArea) { // height greater than width
 			// height is all the available height on screen. Set width
@@ -71,8 +73,8 @@ public class PathDrawingView extends View {
 			// width is all the available width on screen. Set height
 			setMeasuredDimension(canvasWidth, (canvasWidth * lengthArea) / widthArea);
 		}
-		Log.d("SIKAE", "canvasLength:" + canvasLength + "canvasWidth" + canvasWidth);
-		Log.d("SIKAE", "widthMeasureSpec" + widthMeasureSpec + "heightMeasureSpec" + heightMeasureSpec);
+		//Log.d("SIKAE", "canvasLength:" + canvasLength + "canvasWidth" + canvasWidth);
+		//Log.d("SIKAE", "widthMeasureSpec" + widthMeasureSpec + "heightMeasureSpec" + heightMeasureSpec);
 	}
 	
 	@Override
@@ -84,14 +86,16 @@ public class PathDrawingView extends View {
 	@Override
 	public boolean onTouchEvent(MotionEvent event){
 		PointF coord = new PointF(event.getX(), event.getY());
+		//PointF coord = new PointF(event.getY(), canvasWidth - event.getX());
+		Log.d("SIKAE", "x: " + event.getX() + "y: " + event.getY());
 		mArrayList.add(coord);
 		switch(event.getAction()){
 		case MotionEvent.ACTION_DOWN:
 			path.moveTo(coord.x, coord.y);
 			return true;
-		case MotionEvent.ACTION_MOVE:
+			case MotionEvent.ACTION_MOVE:
 			path.lineTo(coord.x, coord.y);
-			Log.d("SIKAE", "x: " + coord.x + "y: " + coord.y);
+			//Log.d("SIKAE", "x: " + coord.x + "y: " + coord.y);
 		case MotionEvent.ACTION_UP:
 			break;
 		default:
@@ -114,9 +118,9 @@ public class PathDrawingView extends View {
 		this.lengthArea = (canvasLength * length) / canvasWidth;
 		
 		for(PointF point : mArrayList){
-			Log.d("SIKAE", "x:" + point.x + " y:" + point.y);
+			//Log.d("SIKAE", "x:" + point.x + " y:" + point.y);
 		}
-		Log.d("SIKAE", "NUMBER POINTS: " + mArrayList.size());
+		//Log.d("SIKAE", "NUMBER POINTS: " + mArrayList.size());
 		
 		
 		try {
@@ -133,7 +137,7 @@ public class PathDrawingView extends View {
 					.getAbsolutePath()
 					+ File.separator
 					+ "coordinates"
-					+ File.separator + "x_ref_n.txt");
+					+ File.separator + "y_ref_n.txt");//   x_ref_n.txt
 			myFileX.createNewFile();
 			FileOutputStream fOutX = new FileOutputStream(myFileX);
 			OutputStreamWriter outputStreamWriterX =
@@ -144,7 +148,7 @@ public class PathDrawingView extends View {
 					.getAbsolutePath()
 					+ File.separator
 					+ "coordinates"
-					+ File.separator + "x_ref_np1.txt");
+					+ File.separator + "y_ref_np1.txt");//   x_ref_np1.txt
 			myFileX2.createNewFile();
 			FileOutputStream fOutX2 = new FileOutputStream(myFileX2);
 			OutputStreamWriter outputStreamWriterX2 =
@@ -157,10 +161,14 @@ public class PathDrawingView extends View {
 			}
 			
 			for(PointF point : mArrayList){
-            	outputStreamWriterX.write((point.x * Y_MAX_VALUE / 2560) + "\r\n");
+            	//outputStreamWriterX.write((point.x * Y_MAX_VALUE / 2560) + "\r\n");
+				outputStreamWriterX.write((X_MAX_VALUE - (point.x * X_MAX_VALUE / 1080)) + "\r\n");
+				//outputStreamWriterX.write(point.y + "\r\n");
     		}
 			for(PointF point : mArrayListXRef){
-            	outputStreamWriterX2.write((point.x * Y_MAX_VALUE / 2560) + "\r\n");
+            	//outputStreamWriterX2.write((point.x * Y_MAX_VALUE / 2560) + "\r\n");
+				outputStreamWriterX2.write((X_MAX_VALUE - (point.x * X_MAX_VALUE / 1080)) + "\r\n");
+				//outputStreamWriterX2.write(point.y + "\r\n");
     		}
             outputStreamWriterX.close();
             outputStreamWriterX2.close();
@@ -174,7 +182,7 @@ public class PathDrawingView extends View {
 					.getAbsolutePath()
 					+ File.separator
 					+ "coordinates"
-					+ File.separator + "y_ref_n.txt");
+					+ File.separator + "x_ref_n.txt"); //   y_ref_n.txt
 			myFileY.createNewFile();
 			FileOutputStream fOutY = new FileOutputStream(myFileY);
 			OutputStreamWriter outputStreamWriterY =
@@ -185,17 +193,19 @@ public class PathDrawingView extends View {
 					.getAbsolutePath()
 					+ File.separator
 					+ "coordinates"
-					+ File.separator + "y_ref_np1.txt");
+					+ File.separator + "x_ref_np1.txt");//   y_ref_np1.txt
 			myFileY2.createNewFile();
 			FileOutputStream fOutY2 = new FileOutputStream(myFileY2);
 			OutputStreamWriter outputStreamWriterY2 =
 					new OutputStreamWriter(fOutY2);
             
             for(PointF point : mArrayList){
-            	outputStreamWriterY.write(((1600 - point.y) * X_MAX_VALUE / 1600) + "\r\n");
+            	outputStreamWriterY.write(((1280 - point.y) * Y_MAX_VALUE / 1280) + "\r\n");
+				//outputStreamWriterY.write(point.x + "\r\n");
             }
             for(PointF point : mArrayListXRef){
-            	outputStreamWriterY2.write(((1600 - point.y) * X_MAX_VALUE / 1600) + "\r\n");
+            	outputStreamWriterY2.write(((1280 - point.y) * Y_MAX_VALUE / 1280) + "\r\n");
+				//outputStreamWriterY2.write(point.x + "\r\n");
     		}
             outputStreamWriterY.close();
             outputStreamWriterY2.close();
@@ -246,37 +256,37 @@ public class PathDrawingView extends View {
 				.getAbsolutePath()
 				+ File.separator
 				+ "coordinates"
-				+ File.separator + "x_n_ref.txt");
+				+ File.separator + "x_ref_n.txt");
 		list.add(Environment
 				.getExternalStorageDirectory()
 				.getAbsolutePath()
 				+ File.separator
 				+ "coordinates"
-				+ File.separator + "x_np1_ref.txt");
+				+ File.separator + "x_ref_np1.txt");
 		list.add(Environment
 				.getExternalStorageDirectory()
 				.getAbsolutePath()
 				+ File.separator
 				+ "coordinates"
-				+ File.separator + "y_n_ref.txt");
+				+ File.separator + "y_ref_n.txt");
 		list.add(Environment
 				.getExternalStorageDirectory()
 				.getAbsolutePath()
 				+ File.separator
 				+ "coordinates"
-				+ File.separator + "y_np1_ref.txt");
+				+ File.separator + "y_ref_np1.txt");
 		list.add(Environment
 				.getExternalStorageDirectory()
 				.getAbsolutePath()
 				+ File.separator
 				+ "coordinates"
-				+ File.separator + "z_n_ref.txt");
+				+ File.separator + "z_ref_n.txt");
 		list.add(Environment
 				.getExternalStorageDirectory()
 				.getAbsolutePath()
 				+ File.separator
 				+ "coordinates"
-				+ File.separator + "z_np1_ref.txt");
+				+ File.separator + "z_ref_np1.txt");
 		try {
 			sendEmailMulipleFiles(getContext(), "lmiguelvargasf@gmail.com", "Coordinates", "Hi, see the attached.\n\nLove,\nSikae bot.", list);
 		} catch (Exception e) {

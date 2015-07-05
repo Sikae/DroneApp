@@ -2,18 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/home/m/Dropbox/Drone App/AppDrone/app/libs/commons-net-ftp-2.0.jar"
+        jar="/home/sikae/Dropbox/Drone App/AppDrone/app/libs/commons-net-ftp-2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="50ab0797241117153a458ce33c1c3dd33a470218">
-        <dex dex="/home/m/Dropbox/Drone App/AppDrone/app/build/intermediates/pre-dexed/debug/commons-net-ftp-2.0-29dfa75b880be43248e49ffa14c022adb66ed68c.jar" />
+        <dex dex="/home/sikae/Dropbox/Drone App/AppDrone/app/build/intermediates/pre-dexed/debug/commons-net-ftp-2.0-230e64fa72402a2bd0f08a41a7757a1e07fd799d.jar" />
     </item>
     <item
-        jar="/home/m/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jar="/home/sikae/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="/home/m/Dropbox/Drone App/AppDrone/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-258f54c8c50cb86abf74a1bf8ba676d664ac5c28.jar" />
+        <dex dex="/home/sikae/Dropbox/Drone App/AppDrone/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-7412504677a26f84ade0b9ce7975d9ce037c5243.jar" />
     </item>
 
 </items>
