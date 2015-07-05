@@ -16,4 +16,4 @@
         android:title="@string/action_settings"
         android:showAsAction="ifRoom|withText" />
 </menu>
-<!-- From: file:/home/sikae/Dropbox/Drone%20App/AppDrone/app/src/main/res/menu/main_action_bar.xml -->
+<!-- From: file:/home/m/AndroidStudioProjects/DroneApp/app/src/main/res/menu/main_action_bar.xml -->
