@@ -4,7 +4,6 @@ build/
 # Built application files
 *.apk
 *.ap_
-*.jar
 
 # Crashlytics configuations
 com_crashlytics_export_strings.xml
