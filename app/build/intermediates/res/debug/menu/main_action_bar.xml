@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item 
+        android:id="@+id/menu_item_clear_path"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/delete_path"
+        android:showAsAction="ifRoom|withText" />
+    <item 
+        android:id="@+id/menu_item_send_path"
+        android:icon="@android:drawable/ic_menu_send"
+        android:title="@string/send_path"
+        android:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/menu_item_settings"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="@string/action_settings"
+        android:showAsAction="ifRoom|withText" />
+</menu>
+<!-- From: file:/home/sikae/Dropbox/Drone%20App/AppDrone/app/src/main/res/menu/main_action_bar.xml -->

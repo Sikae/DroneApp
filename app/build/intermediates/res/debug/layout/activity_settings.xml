@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.00"
+        android:src="@drawable/komegapsi" />
+
+    <EditText
+        android:id="@+id/kx_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="]0,1["
+        android:padding="24dp" />
+
+    <ImageView
+        android:id="@+id/ImageView02"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.00"
+        android:src="@drawable/kvxy" />
+
+    <EditText
+        android:id="@+id/ky_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="24dp" />
+
+    <ImageView
+        android:id="@+id/ImageView03"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.00"
+        android:src="@drawable/kvz" />
+
+    <EditText
+        android:id="@+id/kz_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="]0,1["
+        android:padding="24dp" />
+    <Button
+        android:id="@+id/set_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="24dp"
+        android:text="Set" />
+
+</LinearLayout>
+<!-- From: file:/home/sikae/Dropbox/Drone%20App/AppDrone/app/src/main/res/layout/activity_settings.xml -->
