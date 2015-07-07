@@ -287,8 +287,14 @@ public class PathDrawingView extends View {
 				+ File.separator
 				+ "coordinates"
 				+ File.separator + "z_ref_np1.txt");
+		list.add(Environment
+				.getExternalStorageDirectory()
+				.getAbsolutePath()
+				+ File.separator
+				+ "coordinates"
+				+ File.separator + "control_constants.txt");
 		try {
-			sendEmailMulipleFiles(getContext(), "lmiguelvargasf@gmail.com", "Coordinates", "Hi, see the attached.\n\nLove,\nSikae bot.", list);
+			sendEmailMulipleFiles(getContext(), "mvargas@devsu.com", "Coordinates", "Hi, see the attached.\n\nLove,\nSikae bot.", list);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
